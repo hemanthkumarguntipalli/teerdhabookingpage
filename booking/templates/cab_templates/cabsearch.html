@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Offers On Cab Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            margin-top: 200px;
+        }
+
+  .card {
+    display: flex;
+    flex: 0 0 auto;
+    width: 480px; 
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    overflow: hidden;
+    background-color: #f5f5f5; 
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card img {
+    width: 210px;
+    height: 230px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .code {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: auto;
+    color: white;
+    display: inline-block; 
+    text-decoration: none; 
+  }
+
+  
+  .coupon-code {
+    display: inline-block;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #ff7f00;
+    border: 1px dashed black;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+ 
+
+
+  a {
+    text-decoration: none; 
+  }
+    
+
+        form {
+            background-position: center; 
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color:lightblue;
+            height: auto;
+            margin: auto;
+            padding-left: 10px;
+            margin-right: 30px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        select {
+            width: calc(50% - 20px);
+            padding: 10px;
+            margin-right: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            background-color: aqua;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(55, 55, 255);
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(55, 55, 255);
+        }
+
+        .search-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .swapIcon {
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+            margin: 0 10px;
+            margin-left: -10px;
+            margin-top: 17px;
+        }
+        
+        #customOneWayForm,
+        #outstationRoundTripForm,
+        #airportTransfersForm,
+        #hourlyRentalsForm { 
+            display: none;
+        
+         }
+        .custom-container{
+            margin-top: -170px;
+            margin-left: 20px;
+        }
+ 
+
+        #departureDateContainer,
+        #returnDateRoundTripContainer,
+        #hourlyRentalsContainer { 
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px; 
+            width: calc(50% - 20px);
+        }
+
+        #departureDateContainer label,
+        #returnDateRoundTripContainer label,
+        #hourlyRentalsContainer label {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        
+        #departureDateContainer input,
+        #returnDateRoundTripContainer input,
+        #fromCityInput,
+        #toCityInput,
+        #fromCityInputRoundTrip,
+        #toCityInputRoundTrip,
+        #airportInput,
+        #cityInput,
+        #hourlyPickupLocation,
+        #hourlyPickupDate,
+        #hourlyPickupTime { 
+            flex: 1;
+            padding: 10px; 
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            box-sizing: border-box;
+            height: 40px; 
+            width: 170px;
+            margin-top: 14px;
+
+        }
+
+
+        input[type="radio"] + label {
+            margin-bottom: 10px;
+            margin-right: 20px;
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="radio"]:checked + label {
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        input[type="radio"]:checked + label {
+            font-size: 18px;
+            color: white;
+            background-color: green;
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        
+        select[name="pickup"],
+        select[name="dropMe"],
+        select[name="hourlyPackage"] 
+        {
+            flex: 1; 
+            padding: 10px; 
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            box-sizing: border-box;
+            height: 40px; 
+            width: 135px;
+            margin-top: 12px;
+        }
+        select[name="pickupTime"],
+        select[name="hourlyPickupTime"] { 
+            flex: 1; 
+            padding: 10px; 
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            box-sizing: border-box;
+            height:40px; 
+            width: 190px;
+            margin-top: 17px;
+        }
+
+        .swapIcon {
+            cursor: pointer;
+            font-size: 20px; 
+            color: #333; 
+            margin: 0 10px;
+            margin-left: -10px;
+            margin-top: 17px;
+            
+        }
+
+
+        select[name="pickup"],
+select[name="dropMe"],
+select[name="hourlyPackage"],
+select[name="pickupTime"] {
+   
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    height: 40px;
+    width: 135px;
+    margin-top: 12px;
+}
+
+select[name="pickup"] option,
+select[name="dropMe"] option,
+select[name="hourlyPackage"] option,
+select[name="pickupTime"] option {
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+        #pickupTimeContainer,
+#dropTimeContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#pickupTimeContainer label,
+#dropTimeContainer label {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#pickupTime,
+#dropTime {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    height: 40px;
+    width: 120px;
+    margin-bottom: 7px;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+        .custom-card {
+            display: flex;
+            flex: 0 0 auto;
+            width: 440px; 
+            height: 240px;
+            border-radius: 10px;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            overflow: hidden;
+            background-color:white; 
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .custom-card img {
+            width: 210px;
+            height: 240px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .custom-card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            position: relative; 
+        }
+
+        .custom-code {
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: auto;
+            color: white;
+            display: inline-block;
+            text-decoration: none;
+            background-color: #ff7f00;
+            margin-bottom: 6px;
+            position: absolute; 
+            bottom: 20px; 
+        }
+
+        .coupon-code {
+            display: inline-block;
+            text-align: center;
+            padding: 5px 10px;
+            background-color: #ff7f00;
+            border: 1px dashed black;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none; 
+        }
+
+        .custom-cards-container {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            padding: 20px;
+            justify-content: flex-start;
+            margin-top: 30px;
+        }
+        
+.carousel-nav {
+    position: absolute;
+    top: 97%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.carousel-nav:hover {
+    background-color: green;
+    color: #000;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+
+        .title-card {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .description-card {
+            font-size: 16px;
+            color: black; 
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        h1 {
+        color:darkmagenta;
+        font-family: Arial, sans-serif;
+        font-size: 32px; 
+        text-align: center; 
+        margin-top: 20px; 
+        text-decoration: underline;
+        margin-bottom: 20px; 
+        font-style: italic;
+    }
+.card-1 { background-color: #ffcccc; } 
+.card-2 { background-color: #ccffcc; } 
+.card-3 { background-color: #ccccff; } 
+.card-4 { background-color: #ffeecc; } 
+.card-5 { background-color: #ccffee; } 
+.card-6 { background-color: #f0f0ff; }
+.card-7 { background-color: #ccffcc; } 
+.card-8 { background-color: #ccccff; }  
+
+
+
+
+h4{
+  color: brown;
+  font-size: 35px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  margin-top:10px;
+}
+#lists{
+  font-size: 19px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-right: -100px;
+  padding-bottom: -20px;
+  text-align: justify;
+  width: 960px;
+}
+
+
+
+#status-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #train-status {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    #illustration {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 20px;
+    }
+
+    .custom-card-container {
+      margin-top: -80px;
+      margin-left: 23px;
+      margin-right: 15px;
+      width: 1290px;
+      overflow-y: hidden; /* Hide vertical scrollbar */
+    }
+
+    .custom-card-faq {
+      margin-bottom: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      background-color: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .custom-card-head {
+      padding: 20px;
+      margin-bottom: auto;
+      height: auto;
+      position: relative;
+    }
+
+    .custom-h5 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: black;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+  
+    .custom-h5::after {
+  content: '+';
+  font-size: 24px;
+  color: #333;
+  margin-left: -5px;
+}
+
+    .custom-h5.open::after {
+      content: '-';
+    }
+
+    .custom-p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      display: none;
+    }
+
+.custom-card-head {
+  margin-bottom: 20px;
+}
+
+.custom-h5 {
+  cursor: pointer;
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.custom-h5:hover {
+  color: #007bff;
+}
+
+.custom-p {
+  display: none; 
+  font-size: 16px;
+  line-height: 1.6;
+}
+.custom-h5.active + .custom-p {
+  display: block;
+}   
+
+    </style>
+</head>
+<body>
+
+
+    <div class="custom-container">
+        <h1><i class="fas fa-taxi"></i> Cab Search Form</h1>
+         
+          <form id="searchForm">
+              <div id="tripTypes">
+                  <div>
+                      <input type="radio" name="tripType" value="customOneWay" onclick="showCustomOneWayForm()" checked> 
+                      <label>Custom One Way</label> 
+                      <input type="radio" name="tripType" value="outstationRoundTrip" onclick="showOutstationRoundTripForm()"> 
+                      <label>Outstation Round Trip</label> 
+                      <input type="radio" name="tripType" value="airportTransfers" onclick="showAirportTransfersForm()"> 
+                      <label>Airport Transfers</label>
+                      <input type="radio" name="tripType" value="hourlyRentals" onclick="showHourlyRentalsForm()"> 
+                      <label>Hourly Rentals</label> 
+                  </div>
+              </div><br><br>
+  
+              <div id="customOneWayForm">
+                  <input type="text" id="fromCityInput" name="fromCity" placeholder="From City">
+                  <span class="swapIcon" onclick="swapCities()">&#8644;</span> 
+                  <input type="text" id="toCityInput" name="toCity" placeholder="To City">
+                  <div id="departureDateContainer">
+                      <label for=
+                      "departureDate">Departure Date:</label>
+                      <input type="date" id="departureDate" name="departureDate">
+                  </div>
+                  <div id="returnDateRoundTripContainer">
+                      <label for="returnDate">Return Date:</label>
+                      <input type="date" id="returnDate" name="returnDate">
+                  </div>
+                  <div id="pickupTimeContainer">
+                      <label for="hourlyPickupTime">Pickup:</label> 
+                      <input type="time" id="pickupTime" name="pickupTime">
+                  </div>
+              </div>
+  
+              <div id="outstationRoundTripForm" style="display: none;">
+                  <input type="text" id="fromCityInputRoundTrip" name="fromCity" placeholder="From City">
+                  <span class="swapIcon" onclick="swapCitiesRoundTrip()">&#8644;</span>
+                  <input type="text" id="toCityInputRoundTrip" name="toCity" placeholder="To City">
+                  <div id="departureDateContainer">
+                      <label for="departureDate">Departure Date:</label>
+                      <input type="date" id="departureDate" name="departureDate">
+                  </div>
+                  <div id="pickupTimeContainer">
+                      <label for="pickupTime">Pickup:</label>
+                      <input type="time" id="pickupTime" name="pickupTime">
+                  </div>
+                  
+                  <div id="dropTimeContainer">
+                      <label for="dropTime">Drop:</label>
+                      <input type="time" id="dropTime" name="dropTime">
+                  </div>
+              </div>
+  
+              <div id="airportTransfersForm" style="display: none;">
+                  <select name="pickup">
+                      <option value="" disabled selected>Pickup Me</option>
+                      <option value="fromAirport">From Airport</option>
+                      <option value="toAirport">To Airport</option>
+                  </select>
+                  <input type="text" name="airportName" placeholder="Airport Name" style="display: none;">
+                  <input type="text" name="cityName" placeholder="City Name" style="display: none;">
+                  <input type="text" id="airportInput" name="airport" placeholder="Airport">
+                  <span class="swapIcon" onclick="swapFields('airportInput', 'cityInput')">&#8644;</span>
+                  <input type="text" id="cityInput" name="city" placeholder="City">
+                  <div id="departureDateContainer">
+                      <label for="departureDate">Departure Date:</label>
+                      <input type="date" id="departureDate" name="departureDate">
+                  </div>
+                  <div id="pickupTimeContainer">
+                      <label for="pickupTime">Pickup:</label>
+                      <input type="time" id="pickupTime" name="pickupTime">
+                  </div>
+                  
+              </div>
+  
+              <div id="hourlyRentalsForm" style="display: none;">
+                  <input type="text" id="hourlyPickupLocation" name="pickupLocation" placeholder="Pickup Location"> <!-- Added Hourly Rentals pickup location input -->
+                  <div id="hourlyRentalsContainer"> 
+                      <label for="hourlyPickupDate">Pickup Date:</label> 
+                      <input type="date" id="hourlyPickupDate" name="pickupDate"> 
+                  </div>
+  
+                  <div id="hourlyRentalsContainer"> 
+                      <label for="hourlyPickupTime">Pickup Time :</label> 
+                      <input type="time" id="hourlyPickupTime" name="hourlyPickupTime">
+                  </div>
+                  
+                  <div id="hourlyRentalsContainer"> 
+                      <label for="hourlyPackage">Select Package:</label> 
+                      <select name="hourlyPackage"> 
+                          <option value="" disabled selected>Package Details</Det></option>
+                          <option value="1_hour_10_kms">1 Hour, 10 Kms</option>
+                          <option value="2_hours_20_kms">2 Hours, 20 Kms</option>
+                          <option value="3_hours_30_kms">3 Hours, 30 Kms</option>
+                          <option value="4_hour_40_kms">4 Hour, 40 Kms</option>
+                          <option value="5_hours_50_kms">5 Hours, 50 Kms</option>
+                          <option value="6_hours_60_kms">6 Hours, 60 Kms</option>
+                          <option value="7_hour_70_kms">7 Hour, 70 Kms</option>
+                          <option value="8_hours_80_kms">8 Hours, 80 Kms</option>
+                          <option value="9_hours_90_kms">9 Hours, 90 Kms</option>
+                          <option value="10_hours_10_kms">10 Hours, 100 Kms</option>
+                          
+                          
+                      </select>
+                  </div>
+                  
+              </div>
+                  
+  
+              <div id="formFields"></div>
+              <div class="search-section">
+                  <input type="submit" value="Search">
+              </div>
+          </form>
+      </div>
+
+        
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+      
+        var formData = new FormData(this);
+        
+       
+        fetch(this.action, {
+            method: this.method,
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+<script>
+     document.getElementById('customSearchButton').style.display = 'none';
+document.getElementById('roundTripSearchButton').style.display = 'none';
+document.getElementById('airportSearchButton').style.display = 'none';
+document.getElementById('hourlyRentalsSearchButton').style.display = 'none';
+
+function showCustomOneWayForm() {
+    document.getElementById('customOneWayForm').style.display = 'flex';
+    document.getElementById('outstationRoundTripForm').style.display = 'none';
+    document.getElementById('airportTransfersForm').style.display = 'none';
+    document.getElementById('hourlyRentalsForm').style.display = 'none';
+    document.getElementById('customSearchButton').style.display = 'block';
+    document.getElementById('roundTripSearchButton').style.display = 'none';
+    document.getElementById('airportSearchButton').style.display = 'none';
+    document.getElementById('hourlyRentalsSearchButton').style.display = 'none';
+}
+
+function showOutstationRoundTripForm() {
+    document.getElementById('customOneWayForm').style.display = 'none';
+    document.getElementById('outstationRoundTripForm').style.display = 'flex';
+    document.getElementById('airportTransfersForm').style.display = 'none';
+    document.getElementById('hourlyRentalsForm').style.display = 'none';
+    document.getElementById('roundTripSearchButton').style.display = 'block';
+    document.getElementById('customSearchButton').style.display = 'none';
+    document.getElementById('airportSearchButton').style.display = 'none';
+    document.getElementById('hourlyRentalsSearchButton').style.display = 'none';
+}
+
+function showAirportTransfersForm() {
+    document.getElementById('customOneWayForm').style.display = 'none';
+    document.getElementById('outstationRoundTripForm').style.display = 'none';
+    document.getElementById('airportTransfersForm').style.display = 'flex';
+    document.getElementById('hourlyRentalsForm').style.display = 'none';
+    document.getElementById('airportSearchButton').style.display = 'block';
+    document.getElementById('customSearchButton').style.display = 'none';
+    document.getElementById('roundTripSearchButton').style.display = 'none';
+    document.getElementById('hourlyRentalsSearchButton').style.display = 'none';
+}
+
+function showHourlyRentalsForm() {
+    document.getElementById('customOneWayForm').style.display = 'none';
+    document.getElementById('outstationRoundTripForm').style.display = 'none';
+    document.getElementById('airportTransfersForm').style.display = 'none';
+    document.getElementById('hourlyRentalsForm').style.display = 'flex';
+    document.getElementById('hourlyRentalsSearchButton').style.display = 'block';
+    document.getElementById('customSearchButton').style.display = 'none';
+    document.getElementById('roundTripSearchButton').style.display = 'none';
+    document.getElementById('airportSearchButton').style.display = 'none';
+}
+function swapCities() {
+    var fromCity = document.getElementById('fromCityInput').value;
+    var toCity = document.getElementById('toCityInput').value;
+    document.getElementById('fromCityInput').value = toCity;
+    document.getElementById('toCityInput').value = fromCity;
+}
+
+function swapCitiesRoundTrip() {
+    var fromCity = document.getElementById('fromCityInputRoundTrip').value;
+    var toCity = document.getElementById('toCityInputRoundTrip').value;
+    document.getElementById('fromCityInputRoundTrip').value = toCity;
+    document.getElementById('toCityInputRoundTrip').value = fromCity;
+}
+
+function swapFields(input1Id, input2Id) {
+    var input1Value = document.getElementById(input1Id).value;
+    var input2Value = document.getElementById(input2Id).value;
+    document.getElementById(input1Id).value = input2Value;
+    document.getElementById(input2Id).value = input1Value;
+}
+
+window.onload = showCustomOneWayForm;
+</script>
+<script>
+    window.onload = showCustomOneWayForm;
+</script>
+
+
+                <br><br><br>
+                  <h1>Offers On Cab Booking</h1>
+                  <div class="custom-cards-container">
+                    {% for card in res %}
+                    <!-- <a href="{{card.Link }}" class="card-link">   -->
+                        <div class="custom-card card-{{ forloop.counter }}">
+                            {% if card.photo %}
+                            <img src="{{ card.photo}}" class="card-img">
+                            {% endif %}
+                            <div class="custom-card-content">
+                                <div class="title-card" style="color:#000; font-style: bold;">{{ card.title }}</div> 
+                                <div class="description-card">{{ card.description }}</div>
+                                 <a href="{{card.Link }}" class="card-link"> 
+                                <p><span class="custom-code">{{ card.code }}</span></p> 
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+<script>
+$(document).ready(function() {
+    $(".custom-card").each(function(index) {
+        $(this).addClass("card-" + (index + 1));
+    });
+});
+
+</script>
+
+
+    <div class="fixed-carousel-nav">
+        <div class="carousel-nav prev"><i class="fas fa-chevron-left"></i></div>
+        <div class="carousel-nav next"><i class="fas fa-chevron-right"></i></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".next").click(function() {
+                $(".custom-cards-container").stop().animate({
+                    scrollLeft: "+=300"
+                }, 500);
+            });
+
+            $(".prev").click(function() {
+                $(".custom-cards-container").stop().animate({
+                    scrollLeft: "-=300"
+                }, 500);
+            });
+        });
+    </script>
+
+ <center><h1>Why Choose Us :</h1></center>
+
+<div class="card1" style="margin-right: 20px; margin-top:10px; padding:10px ; border-radius: 10px; border:3px solid rgb(190, 157, 114); margin-left: 10%; width:1000px; background-color: #fff;">
+  <div class="col-10">
+    <div class="title1">
+      <h4>{{ k3.0.ctitle }}</h4>
+    </div>
+    <ul>
+      {% for item in k3 %}
+        {% if item.ctitle == k3.0.ctitle %}
+          <li id="lists">{{ item.heading1 }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="card2" style="margin-right: 20px; margin-top: 30px; padding: 10px; border-radius: 10px; border:3px solid rgb(190, 157, 114); margin-left: 10%; width:1000px; background-color:#fff">
+  <div class="col-10">
+    <div class="title2">
+      <h4>{{ k3.1.ctitle }}</h4>
+    </div>
+    <ul>
+      {% for item in k3 %}
+        {% if item.ctitle == k3.1.ctitle %}
+          <li id="lists">{{ item.heading1 }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="card3" style="margin-right: 40px; margin-top: 30px; padding: 10px; border-radius: 10px; border:3px solid rgb(190, 157, 114); margin-left: 10%; width:1000px; background-color:#fff">
+  <div class="col-10">
+    <div class="title3">
+      <h4>{{ k3.2.ctitle }}</h4>
+    </div>
+    <ul>
+      {% for item in k3 %}
+        {% if item.ctitle == k3.2.ctitle %}
+          <li id="lists">{{ item.heading1 }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<div class="card4" style="margin-right: 40px; margin-top: 30px; padding: 10px; border-radius: 10px; border:3px solid rgb(190, 157, 114); margin-left: 10%; width:1000px; background-color:#fff">
+  <div class="col-10">
+    <div class="title4">
+      <h4>{{ k3.7.ctitle }}</h4>
+    </div>
+    <ul>
+      {% for item in k3 %}
+        {% if item.ctitle == k3.7.ctitle %}
+          <li id="lists">{{ item.heading1 }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="card5" style="margin-right: 40px; margin-bottom: 140px; margin-top: 30px; padding: 10px; border-radius: 10px; border:3px solid rgb(190, 157, 114); margin-left: 10%; width:1000px; background-color:#fff">
+  <div class="col-10">
+    <div class="title5">
+      <h4>{{ k3.8.ctitle }}</h4>
+    </div>
+    <ul>
+      {% for item in k3 %}
+        {% if item.ctitle == k3.8.ctitle %}
+          <li id="lists">{{ item.heading1 }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div id="status-container">
+    {% if train_status %}
+      <p id="train-status">{{ train_status }}</p>
+    {% endif %}
+  </div>
+
+  <div class="custom-card-container">
+      {% for i in b %}
+      <h1 class="custom-h2">{{ i.content }}</h1>
+        <div class="custom-card-faq">
+          <div class="custom-card-head">
+            <h5 class="custom-h5" onclick="toggleFAQ(this)">{{ i.Title }}</h5>
+            <p class="custom-p" style="white-space: pre-line;">{{ i.description }}</p>
+            <h5 class="custom-h5" onclick="toggleFAQ(this)">{{ i.Title1 }}</h5>
+            <p class="custom-p" style="white-space: pre-line;">{{ i.description1 }}</p>
+            <h5 class="custom-h5" onclick="toggleFAQ(this)">{{ i.Title2 }}</h5>
+            <p class="custom-p" style="white-space: pre-line;">{{ i.description2 }}</p>
+            <h5 class="custom-h5" onclick="toggleFAQ(this)">{{ i.Title3 }}</h5>
+            <p class="custom-p" style="white-space: pre-line;">{{ i.description3 }}</p>
+            <h5 class="custom-h5" onclick="toggleFAQ(this)">{{ i.Title4}}</h5>
+            <p class="custom-p" style="white-space: pre-line;">{{ i.description4 }}</p>
+            <h5 class="custom-h5" onclick="toggleFAQ(this)">{{ i.Title5 }}</h5>
+            <p class="custom-p" style="white-space: pre-line;">{{ i.description5 }}</p>
+            <h5 class="custom-h5" onclick="toggleFAQ(this)">{{ i.Title6 }}</h5>
+            <p class="custom-p" style="white-space: pre-line;">{{ i.description6 }}</p>
+            <h5 class="custom-h5" onclick="toggleFAQ(this)">{{ i.Title7 }}</h5>
+            <p class="custom-p" style="white-space: pre-line;">{{ i.description7}}</p>
+            <h5 class="custom-h5" onclick="toggleFAQ(this)">{{ i.Title9}}</h5>
+            <p class="custom-p" style="white-space: pre-line;">{{ i.description9}}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+<!-- 
+<script>
+function toggleFAQ(faq) {
+  const answer = faq.nextElementSibling;
+  const icon = faq.classList;
+
+  if (answer.style.display === "block") {
+    answer.style.display = "none";
+    icon.remove("open");
+  } else {
+    answer.style.display = "block";
+    icon.add("open");
+  }
+}
+ </script>  -->
+
+ <script>
+    let openFAQ = null;
+    
+    function toggleFAQ(faq) {
+      const answer = faq.nextElementSibling;
+      const icon = faq.classList;
+    
+      if (openFAQ && openFAQ !== faq) {
+        const prevAnswer = openFAQ.nextElementSibling;
+        const prevIcon = openFAQ.classList;
+        prevAnswer.style.display = "none";
+        prevIcon.remove("open");
+      }
+    
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+        icon.remove("open");
+        openFAQ = null;
+      } else {
+        answer.style.display = "block";
+        icon.add("open");
+        openFAQ = faq;
+      }
+    }
+    </script>
+    
+    
+</body>
+</html>

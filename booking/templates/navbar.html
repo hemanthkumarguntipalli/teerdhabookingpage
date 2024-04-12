@@ -1,0 +1,181 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Navbar</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+	    *{
+		margin: 0; 
+		padding: 0;
+		}
+		body {
+		height: 100vh;
+		}
+        nav .logo-container {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+        nav .logo {
+            width: 110px; /* Adjust the size of the logo */
+            margin-right: 10px; /* Adjust spacing between logo and text */
+        }
+		nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 18px;
+		font-weight: bold;
+		font-family: sans-serif;
+		padding: 15px;
+		background:#140B5C;
+        position:fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 1000; /* Ensure the navbar stays on top of other content */
+		}
+        nav .menu-toggle {
+            display: flex; /* Ensure the hamburger icon remains visible */
+            align-items: center; /* Align the icon vertically */
+            margin-right: 20px; /* Add margin to separate the icon from the right edge */
+        }
+        .list {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+		nav a {
+		text-decoration: none;
+		color: white;
+		}
+        .list li {
+            margin-right: 50px; /* Adjust the spacing between each navigation item */
+        }
+        .list li a {
+            padding: 30px; /* Add padding around each navigation link */
+        }
+		.list li a {
+            text-decoration: none;
+            color: white;
+        }
+		#toggler, label{
+		display: none;
+		}
+		label i{
+		color: white;
+		}
+		@media screen and (max-width: 650px){
+		.menu{
+		width: 100%;
+		max-height: 0;
+		overflow: hidden;
+        flex-direction: column;
+        justify-content: center; 
+        position: fixed; 
+        top: 85px; 
+        right: 0; 
+        height: calc(100vh - 100px); 
+		}
+		label{
+		display: inline-flex;
+		}
+		#toggler:checked~.menu{
+		max-height: 100%;
+		}
+		.list{
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+		}
+        .list {
+            background-color: #555; 
+        }
+        .list li {
+            margin-right: 0; 
+        }
+        
+        .list li a {
+            display: block;
+            padding: 20px 100px; 
+        }
+    
+        nav ul li a {
+            display: block; 
+        }
+        nav ul li a:hover {
+            border-bottom: 2px solid cadetblue;
+        }
+        header ul li {
+            margin-top: 20px; 
+            text-align: center; 
+            width: 100%;
+            flex-direction: column; 
+        }
+		}
+        .content {
+            padding-top: 70px;  
+        }
+        .content {
+            padding-top: 90px; 
+            padding-left: 20px;
+            padding-right: 20px; 
+            padding-bottom: 20px; 
+        }
+</style>
+</head>
+	<body>
+	<nav style="color:white">
+        <div class="logo-container">
+            <h1 style="color:white">Teerdha</h1>
+        </div>
+		<label for="toggler">
+			<i class="fa fa-bars"></i>
+		</label>
+	<input type="checkbox" id="toggler" name="">
+		<div class="menu">
+			<ul class="list">
+				<li style="color:white">{% for navigation_item in navigation_items %}
+                    <a {% if forloop.first %}class="active"{% endif %} href="{{ navigation_item.url }}">
+                        {% if navigation_item.icon %}<img src="/media\{{navigation_item.icon}}" style="height: 40px;margin-bottom: -12px;">
+                        {% endif %}{{ navigation_item.name }}</a>
+                  {% endfor %}
+                </li>
+			</ul>
+		</div>
+	</nav>
+</body>
+</html>
+<br><br><br><br><br><br><br>-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" integrity="sha512-xgIrH5DRuEOcZK5cPtVXx/WSp5DTir2JNcKE5ahV2u51NCTD9UDxbQgZHYHVBlPc4H8tug6BZTYIl2RdA/X0Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body> 
+        <nav class="sticky-top" style="background-color: rgb(17, 17, 128);">
+            <ul class="navbar "> 
+                <li style="list-style: none;"><a class="text-decoration-none text-white h2"  href="/">Teerdha</a></li>
+                <li style="list-style: none;"><a class="text-decoration-none text-white h5"  href="/"><i class="bi bi-airplane-fill"></i> Flights</a></li>
+                <li style="list-style: none;"><a class="text-decoration-none text-white h5"  href="#home"><i class="bi bi-bus-front-fill"></i> Buses</a></li>
+                <li style="list-style: none;"><a class="text-decoration-none text-white h5"  href="/cab_main/"><i class="bi bi-taxi-front-fill"></i> Cabs</a></li>
+                <li style="list-style: none;"><a class="text-decoration-none text-white h5"  href="/hotelform/"><i class="bi bi-buildings-fill"></i> Hotels</a></li>
+                <li style="list-style: none;"><a class="text-decoration-none text-white h5"  href="#home"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
+            </ul>
+        </nav>
+    </body>
+</html>

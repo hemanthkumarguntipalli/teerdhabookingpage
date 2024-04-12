@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tirdha Bus Booking</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			height: 100vh;
+			background-image: url('bus2.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		.nav{
+			display: flex;
+			background-color: rgba(0, 0, 0, 0.3);
+			display: flex;
+		}
+		.nav img{
+			height: 80px;
+			width: 80px;
+			background-color: none;
+		}
+		.nav ul{
+			display: flex;
+			list-style: none;
+			margin-top: 30px;
+		}
+		.nav a{
+			text-decoration: none;
+			color: white;
+			font-weight: bold;
+			padding: 20px;
+			/*margin: 15px;*/
+			
+		}
+		h3{
+			text-align: center;
+			color: black;
+			font-weight: bold;
+			font-size: 25px;
+			padding: 5px 0 0 0;
+		}
+		.content{
+			position: relative;
+			margin-left: 25%;
+			margin-top: 9%;
+			width: 700px;
+			height: 200px;
+			background:rgba(255,255,255, 0.7);
+			border: none;
+			border-radius: 15px;
+			box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+			text-align: center;
+		}
+		.content h1{
+			color: tomato;
+			margin-top: 20px;
+		}
+		.forms{
+			display: flex;
+			width: 500px;
+			margin-left: 40px;
+			padding: 15px;
+
+		}
+		div input, select{
+			margin-left: 30px;
+			padding: 5px;
+			border: 1px solid white;
+			border-radius: 5px;
+			background-color: none;
+			width: 100px;
+			background-color: rgba(255, 255, 255, 0.8);
+		}
+
+		.search{
+			padding: 12px 14px;
+			width: 150px;
+			background-color: seagreen;
+			color: white;
+			border: none;
+			border-radius: 25px;
+			cursor: pointer;
+		}
+		</style>
+</head>
+<body>
+	<div class="container">
+		<div class="nav">
+			<img src="C:\Users\DevelopTrees\Pictures\Saved Pictures\logo.png" alt='logo'>
+			<ul>
+			<li><a href="home"><i class="fa-solid fa-bus" style="color:tomato;" ></i>Bus Tickets</a></li>
+			<li><a href="contactus"><i class="fa-solid fa-train" style="color:tomato;" ></i>Train Tickets</a></li>
+			<li><a href="aboutus"><i class="fa-solid fa-circle-info" style="color:tomato;" ></i>Help</a></li>
+			<li><a href="aboutus"><i class="fa-solid fa-user" style="color:tomato;" ></i></i>Account</a></li>
+			</ul>
+		</div>
+		<h3>India's No. 1 Online Bus Ticket Booking Site</h3>
+		<div class="content">
+		<h1>Bus Booking</h1>
+		<!-----forms------->
+		<div class="forms">
+			<div class="form1">
+				<label>From</label>
+				<input type="text" name="cn" placeholder="City Name">
+			</div>
+
+			<div class="form2">
+				<label>To</label>
+				<input type="text" name="cn" placeholder="City Name">
+			</div>
+
+			<div class="form3">
+				<label>Date</label>
+				<input type="date" name="date" >
+			</div>
+
+			<!--dropdown--->
+			<div class="form4">
+			<label>Seat</label>
+			<select name="seats" id="seats">
+				<option value="sys">Select Seat</option>
+			    <option value="1">1</option>
+			    <option value="2">2</option>
+			    <option value="3">3</option>
+			    <option value="4">4</option>
+			</select>
+			</div>
+		</div>
+		<button type="search" class="search">Search Buses</button>
+	</div>
+</body>
+</html>

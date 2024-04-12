@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>data displaying</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+<style>
+
+#sj{
+    justify-content: center;
+
+}
+h2{
+    color: brown;
+    text-align: center;
+
+}
+h5{
+    color: green;
+}
+.sh{
+    width: 1345px;
+    height: 500px;
+
+}
+
+#op{
+
+    background-color: rgb(142, 68, 210);
+    height: 80px;
+    width: 700px;
+    text-align: center;
+    border-radius: 10px;
+    padding-top: 15px;
+}
+</style>
+
+
+    </head> 
+<body>
+  
+{% for jk in p %}
+  <img class="sh" src="{{ jk.image }}" alt="image"><br><br>
+
+  <div class="col text-center">
+    <a href="/hotelform"><input type="button" value="Book Now" class="btn btn-sm btn-primary w-20"></a>
+</div>
+<br><br>
+<div class="container" id="op">
+    <div class="col">
+       <b>{{ jk.title }}</b>
+    </div>
+    <div class="col">   
+       <b>{{ jk.couponcode }}</b>
+    </div>
+{% endfor %}
+
+</div><br><br>
+  <h2>Offer Details</h2>
+
+        
+            <center>
+                <table class="text-center" border="1" style="height: 100px;width: 600px;">
+                   
+                    <tr style="background-color: rgb(142, 68, 210);">
+                    <th>Product</th>
+                    <th>Offer</th>
+                    </tr>
+                    {% for i in q %}
+                    <tr>
+                    <td>{{ i.applicable }}</td>
+                    <td>{{ i.offer }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            
+            </center><br><br>
+    
+
+<div class="container" style="background-color: rgb(232, 237, 237);border-radius: 10px;padding: 10px;">   
+
+ <h5>What do you get?</h5>  
+ <ul>
+    {% for ps in r %}
+    {% if ps.content %}
+    <li>{{ ps.content }}</li>
+    {% else %}
+    {% endif %}
+    {% endfor %}
+ </ul> 
+ <br>
+
+
+ <h5>How do you get it?</h5>  
+ <ul>
+    {% for pq in r %}
+    {% if pq.content1 %}
+    <li>{{ pq.content1 }}</li>
+    {% else %}
+    {% endif %}
+    {% endfor %}
+ </ul> 
+ <br>
+
+ <h5>What else do you need to know?</h5> 
+ <ul>
+    {% for ki in r %}
+    {% if ki.content2 %}
+    <li>{{ ki.content2 }}</li>
+    {% else %}
+    {% endif %}
+    {% endfor %}
+ </ul>  
+ <br><br>
+
+    
+    <h5>Conditions in case of cancellation:</h5><br>
+    <ul>
+        {% for kl in r %}
+        {% if kl.content3 %}
+        <li>{{ kl.content3 }}</li>
+        {% else %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+<br><br>
+    
+    <h5>Terms & Conditions</h5><br>
+    <ul>
+        {% for k in r %}
+        {% if k.content4 %}
+        <li>{{ k.content4 }}</li>
+        {% else %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>   
+

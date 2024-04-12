@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'base.html' %}
+    {% block flight %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" integrity="sha512-xgIrH5DRuEOcZK5cPtVXx/WSp5DTir2JNcKE5ahV2u51NCTD9UDxbQgZHYHVBlPc4H8tug6BZTYIl2RdA/X0Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+    @media (max-width: 768px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* display 3 */
+
+.car:hover{
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+    border-radius: 18px;
+}
+.adjust{
+    margin-top: 28%;
+    color:ghostwhite;
+    margin-right: 20%;
+}
+h4{
+    color:coral;
+    text-shadow: 1px 1px black;
+    text-align: center;
+}
+
+.navsearch{
+    border:2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-image: linear-gradient(rgb(229, 229, 253),rgb(232, 250, 232));
+    /* background-image: url("/media/images/family_flights.png"); */
+}
+/* .features{
+    border: 5px solid #ddd;
+    border-radius: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 50px solid #ddd;
+} */
+.raj{
+    display: flex;
+}
+#img{
+    /* border:1px solid #ddd; */
+    border-top-right-radius: 40%;
+    border-bottom-right-radius: 10%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+/* .cards{
+    border:1px solid #ddd;
+    border-radius: 20px; 
+    background-image: linear-gradient( azure,whitesmoke,wheat);
+} */
+#title{
+   color:chocolate; 
+}
+#content{
+    color:black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    
+}
+.bd{
+    border:1px solid #ddd;
+    border-radius: 20px;
+}
+
+label{
+    text-align: center;
+}
+/*............            set a fare  hover over effect        ............  */
+.armed-fare{
+    position:relative;
+}
+.armed-fare::after{
+    content: "Mandatory for all travellers to carry a valid ARMED FORCES ID or dependent card at the time of boarding";
+    position:absolute;
+    top:150%;
+    left:-100px;
+    visibility:hidden;
+    opacity:0;
+    transition: opacity 0.3 ease;
+}
+.armed-fare:hover::after{
+    visibility: visible;
+    opacity:1;
+    width:250px;
+    font-size: 13px;
+    background-color: #ddd;
+    border:2px solid #ddd;
+    border-radius: 10px;
+    color:rgb(168, 106, 24);
+}
+
+.student-fares{
+    position:relative;
+}
+.student-fares::after{
+    content: "Mandatory for all students to carry a valid STUDENT ID card at the time of boarding.";
+    position:absolute;
+    top:150%;
+    left:-100px;
+    visibility:hidden;
+    opacity:0;
+    transition: opacity 0.3 ease;
+}
+.student-fares:hover::after{
+    visibility:visible;
+    opacity:1;
+    width:250px;
+    font-size: 13px;
+    background-color: #ddd;
+    border:2px solid #ddd;
+    border-radius: 10px;
+    color:rgb(168, 106, 24);
+}
+
+.senior-citizen{
+    position:relative;
+}
+.senior-citizen::after{
+    content:"Applicable for citizens above 60 years of age. Please provide valid proof of age at the airport.";
+    position:absolute;
+    top:150%;
+    left:-100px;
+    visibility: hidden;
+    opacity:0;
+    transition: opacity 0.3 ease;
+}
+.senior-citizen:hover::after{
+    visibility: visible;
+    opacity:1;
+    width:250px;
+    font-size:13px;
+    background-color: #ddd;
+    border:2px solid #ddd;
+    border-radius: 10px;
+    color:rgb(168, 106, 24);
+}
+.doctors-fare{
+    position:relative;
+}
+.doctors-fare::after{
+    content:"Applicable only for medical personnel.it is mandatory to show a valid ID at the airport,without which boarding may be denied.";
+    position:absolute;
+    top:150%;
+    left:-100px;
+    visibility:hidden;
+    opacity:0;
+    transition: opacity 0.3 ease;
+}
+.doctors-fare:hover::after{
+    visibility: visible;
+    opacity:1;
+    width:250px;
+    font-size:13px;
+    background-color: #ddd;
+    border:2px solid #ddd;
+    border-radius: 10px;
+    color:rgb(168, 106, 24);
+}
+
+/* ................... end hover over effect...................... */
+
+</style>
+
+<style>
+       
+    .faq-section{
+        
+        margin: 20px auto;
+
+    }
+    .question{
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+        padding:8px;
+        border:1px solid;
+        margin:5px;
+        font-style:italic;
+        border-radius:15px;
+    }
+    .answer{
+        display: none;
+        padding-left: 20px;
+        font-style:italic;
+        font-size:15px;
+    
+    }
+    .question i{
+        float:right;
+    }
+    
+    .container{
+        margin:0 auto;
+        padding:35px;        
+        
+    }
+    h3{
+        font-weight:bold;
+        color:red;
+    }
+    .question:hover{
+        background-color: rgb(215, 250, 187);
+    }
+</style>
+
+<style>
+    .flip-card {
+      background-color: transparent;
+      border-radius: 20px;
+      width: 250px;
+      height: 200px;
+      perspective: 1000px;
+    }
+    
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: justify;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    
+    .flip-card-front {
+      background-color: #bbb;
+      border-radius: 20px;
+      color: black;
+    }
+    
+    .flip-card-back {
+      font-style: italic;
+      border-radius: 20px;
+      color: black;
+      text-shadow: wheat;
+      transform: rotateY(180deg);
+    }
+
+    #op{
+        color: rgb(109, 54, 54);
+    }
+    </style>
+    
+
+</head>
+<body >
+    <form method="post" class="mt-3">{% csrf_token %}  
+    <div class="pt-3 pb-4">
+        <div class="container navsearch p-4">
+            <div class="mb-3">
+                <input type="radio" value="one way" id="one_way" name="way" onclick="toggleReturnDate()" checked>
+                <label class="form-check-label" for="one_way">One Way</label>
+    
+                <input type="radio" value="two way" id="two_way" name="way" onclick="toggleReturnDate()">
+                <label class="form-check-label" for="two_way">Round Trip</label>
+            </div>
+    
+            <div class="flight-search-container row">
+                <div class="col-md-2">
+                    <label class="form-label" for="fromid">From:</label>
+                    <input type="text" class="form-control" id="fromid" name="fromid">
+
+                </div>
+                <div class="col-md-1">
+                    <button class="btn ml-2 mt-4 bg-white text-primary" style="border: 1.5px solid #ddd;" type="button" onclick="swapLocations()"><i class="bi bi-arrow-left-right"></i></button>
+
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label" for="toid">To:</label>
+                    <input type="text" class="form-control" id="toid" name="toid">
+
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label" for="dpdate">Departure:</label>
+                    <input type="date" class="form-control" id="dpdate" name="dpdate">
+
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label" for="rtdate">Return:</label>
+                    <input type="date" class="form-control" id="rtdate" name="rtdate" disabled>
+
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label" for="cbclass">Cabin Class:</label>
+                    <select name="cbclass" id="cbclass" class="form-control">
+                        <option value="ECONOMY">ECONOMY</option>
+                        <option value="PREMIUM_ECONOMY">PREMIUM_ECONOMY</option>
+                        <option value="BUSINESS">BUSINESS</option>
+                        <option value="FIRST">FIRST</option>
+                    </select>
+                </div>
+                <div class="col-md-1 mt-4">
+                    <input type="submit" class="btn btn-success" value="Search">
+                </div>
+            </div>
+    
+             <!-- <div class="flight-search-container row">
+                <div class="col-md-2">
+                    <input type="text" class="form-control" id="fromid" name="fromid">
+                </div>
+                <div class="col-md-1">
+                    <button class="btn ml-2 bg-white text-primary" style="border: 1.5px solid #ddd;" type="button" onclick="swapLocations()"><i class="bi bi-arrow-left-right"></i></button>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" id="toid" name="toid">
+                </div>
+                <div class="col-md-2">
+                    <input type="date" class="form-control" id="dpdate" name="dpdate">
+                </div>
+                <div class="col-md-2">
+                    <input type="date" class="form-control" id="rtdate" name="rtdate" disabled>
+                </div>
+                <div class="col-md-2">
+                    <select name="cbclass" id="cbclass" class="form-control">
+                        <option value="ECONOMY">ECONOMY</option>
+                        <option value="PREMIUM_ECONOMY">PREMIUM_ECONOMY</option>
+                        <option value="BUSINESS">BUSINESS</option>
+                        <option value="FIRST">FIRST</option>
+                    </select>
+                </div> -->
+                
+            
+
+            <!-- <div class="mt-4">
+                <label for="select a fare type" class="form-check-label text-danger" style="margin-right:15px;">Select A<br> Fare Type:</label>
+                
+                <input type="radio" id="regular-fare" name="select a fare type">
+                <label for="regular-fare" class="form-check-label" style="margin-right:15px;">Regular <br>Fares</label>
+
+                <input type="radio" id="armed-fare" name="select a fare type">
+                <label for="armed-fare" class="form-check-label" style="margin-right:15px;">Armed Forces <br>Fares</label>
+
+                <input type="radio" id="student-fares" name="select a fare type">
+                <label for="student-fares" class="form-check-label" style="margin-right:15px;">Student<br>Fares</label>
+                
+                
+                <input type="radio" id="senior-fares" name="select a fare type">
+                <label for="senior-fares" class="form-check-label" style="margin-right:15px;">senior citizen<br>Fares</label>
+
+                <input type="radio" id="doctors-fares" name="select a fare type">
+                <label for="doctors-fares" class="form-check-label" style="margin-right:15px;">Doctors & Nurses <br> Fares</label>
+
+            </div> -->
+
+
+            <div class="pt-4">
+                <label for="select a fare type" class="text-primary">Select a Fare Type:</label>&nbsp;&nbsp;&nbsp;
+                
+                <input type="radio" id="regular-fare" name="select a fare type" value="regular-fare">
+                <label class="form-check-label mr-5" for="regular-fare">Regular Fares</label>
+
+                <input type="radio" id="armed-fares" name="select a fare type" value="armed-fares">
+                <label class="form-check-label armed-fare mr-5" for="armed-fares">Armed Forces</label>
+
+                <input type="radio" id="student-fares" name="select a fare type" value="student-fare">
+                <label class="form-check-label mr-5 student-fares" for="student-fares">Student Fares</label>
+
+                <input type="radio" id="senior-citizen" name="select a fare type" value="senior-citizen">
+                <label class="form-check-label mr-5 senior-citizen " for="senior-citizen">Senior citizen</label>
+
+                <input type="radio" id="doctors-fare" name="select a fare type" value="doctors-fare">
+                <label class="form-check-label mr-5  doctors-fare" for="doctors-fare">Doctors & Nurses Fares</label>
+            </div>
+
+        </div> 
+    </div>
+    </form>  
+
+
+
+    <!-- <h4 class="mt-5">Flight Offeres</h4> -->
+<div class="container  features text-center pt-5">
+    <h4>Trending Offers</h4><br><br>
+    <div class="row mx-auto my-auto">
+        <div id="cardcarousel" class="carousel slide w-100" data-ride="carousel">
+            <div class="carousel-inner w-100" role="listbox">
+                <div class="carousel-inner ">
+                  
+                    {% for i in res %}
+                                       
+                    <div class="carousel-item {% if forloop.counter0 == 0 %} active{% endif %}">
+                        <div class="  col-md-4 mb-3" style="max-width: 540px; height:200px;">
+                            <a class="text-decoration-none" href="{{i.url}}">  
+                            <div class="row no-gutters bd" style=" background-color: {% cycle 'rgb(207, 207, 252)' 'rgb(252, 214, 220)' 'rgb(202, 253, 189)' 'rgb(228, 224, 224)' 'rgb(219, 201, 188)' %}">
+                              <div class="col-md-4">
+                                <img src="{{i.image}}" class="card-img" height="200px" width="150px" id="img">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h6 class="card-title" id="title">{{i.title}}</h6>
+                                  <p id="content">{{i.content}}</p>
+                                </div>
+                              
+                                  <input type="button" value="Book Now" class="btn btn-sm btn-primary w-20">
+                             
+                              </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+
+                    
+                    {% endfor %} 
+                    {% comment %} {% for i in res %}
+                    <div class="carousel-item {% if forloop.counter0 == 0 %} active{% endif %}">
+                        <div class="col-md-4">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="{{i.image}}" class="card-img" height="197px" width="150px">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5>{{i.title}}</h5>
+                                        <p>{{i.content}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %} {% endcomment %}
+
+                </div>
+                
+            <a class="carousel-control-prev w-auto" href="#cardcarousel" role="button" data-slide="prev" >
+                <span class="bi bi-arrow-left-circle h3" style="color: rgb(238, 41, 238);" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next w-auto" href="#cardcarousel" role="button" data-slide="next">
+                <span class="bi bi-arrow-right-circle h3" style="color: rgb(238, 41, 238);" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div><br><br>
+    <h4>Why you choose 'TEERDHA' for bookings?</h4>
+
+
+
+{% for l in wch %}
+    <div class="container mt-4" style="border: 1px solid black;border-radius: 10px;"> 
+            <div class="row  text-left" >
+                <p id="op"><b>{{ l.question}}</b></p>
+                <p>{{ l.answer }}</p> 
+            </div>
+    </div>
+{% endfor %}
+
+    <!-- <p class="text-center h2 mt-5">Why you Choose TEERDHA for bookings?</p>
+    <div class="container pt-4">
+        <div class="row">
+            {% for i in wcu %}
+            <div class="col-3">
+                <div class="flip-card" >
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                    <img  src="{{i.image}}" alt="Avatar" style="width:250px;height:200px;border-radius: 20px;">
+                    </div>
+                    <div class="flip-card-back" style="background-color: {% cycle 'wheat' 'lightpink' 'rgb(202, 253, 189)' 'rgb(228, 224, 224)' 'rgb(219, 201, 188)' %}">
+                    <h5 class="text-center mt-4 pt-4 ml-3 mr-3">{{i.content}}</h5> 
+                    </div>
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div> -->
+
+
+<div class="container">
+    <h3><u><center>FAQ's on Flights</center></u></h3><br>
+    
+        <div class="faq-section">
+
+            {% for i in rest %}
+
+            <div class="row question" onclick="toggleAnswer({{ i.id }})"> 
+                <div class="col-10 text-left h6">                       
+                    {{ i.question }}
+                </div>
+                <div class="col text-right">
+                    <i class="text-right fa fa-angle-down" style="font-size:20px"></i>
+                </div>
+            </div>
+                <div class="answer h6" id="answer{{i.id}}" style='color:black'>
+                    {{ i.answer }}
+                </div>
+            {% endfor %}
+    
+            
+        </div>
+    
+</div>
+<script>
+    function toggleAnswer(id) {
+        var answer = document.getElementById("answer" + id);
+        var arrow = document.getElementById("arrow" + id);
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+            arrow.style.transform = "rotate(0deg)";
+    } else {
+        answer.style.display = "block";
+        arrow.style.transform = "rotate(180deg)";
+    }
+
+        
+    }
+</script>
+
+
+
+<script>
+    $('#cardcarousel').carousel({
+  interval: 8000
+})
+
+$('.carousel .carousel-item').each(function(){
+    var minPerSlide = 3;
+    var next = $(this).next();
+    if (!next.length) {
+    next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+    
+    for (var i=0;i<minPerSlide;i++) {
+        next=next.next();
+        if (!next.length) {
+        	next = $(this).siblings(':first');
+      	}
+        
+        next.children(':first-child').clone().appendTo($(this));
+      }
+});
+
+
+
+// search bar script
+
+        function toggleReturnDate() {
+            var rtDate = document.getElementById('rtdate');
+            var twoWayRadio = document.getElementById('two_way');
+            rtDate.disabled = !twoWayRadio.checked;
+        }
+
+        function swapLocations() {
+            var fromInput = document.getElementById('fromid');
+            var toInput = document.getElementById('toid');
+            var temp = fromInput.value;
+            fromInput.value = toInput.value;
+            toInput.value = temp;
+        }
+
+</script>
+
+<br><br><br>
+ 
+
+
+</body>
+{% endblock %}
+</html>
+
+

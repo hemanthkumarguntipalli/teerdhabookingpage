@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Offer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            width: 100%;
+            max-width: 1600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 1850px;
+        }
+
+        label {
+            font-size: large;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            padding-top: 6px;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+
+<body>
+     <form method="post" enctype="multipart/form-data" action="/cabfaq_crud_update/{{b.id}}">{% csrf_token %} 
+        <!-- <form method="post" enctype="multipart/form-data" action="/faq_crud_upd/{{k3.id}}">{% csrf_token %}
+        <form method="post" enctype="multipart/form-data" action="/faq_crud_upd/{{k3.id}}"style="width: 450px;">{% csrf_token %} -->
+
+        <div class="form-group">
+            <label for="content">content</label>
+            <input type="text" id="content" name="content" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" id="Title" name="Title" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for ="description">description</label>
+            <textarea name="description" id="description" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Title1">Title1</label>
+            <input type="text" id="Title1" name="Title1" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="description1">description1</label>
+            <textarea name="description1" id="description1" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Title2">Title2</label>
+            <input type="text" id="Title2" name="Title2" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="description2">description2</label>
+            <textarea name="description2"id="description2" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Title3">Title3</label>
+            <input type="text" id="Title3" name="Title3" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="description3">description3</label>
+            <textarea name="description3"id="description3"class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Title4">Title4</label>
+            <input type="text" id="title4" name="Title4" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for ="description4">description4</label>
+            <textarea name="description4" id="description4"class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Title5">Title5</label>
+            <input type="text" id="Title5" name="Title5" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for = "description5">description5</label>
+            <textarea name="description5"id="description5" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Title6">Title6</label>
+            <input type="text" id="Title6" name="Title6" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for ="description6">description6</label>
+            <textarea name="description6"id="description6" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Title7">Title7</label>
+            <input type="text" id="Title7" name="Title7" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for ="description7">description7</label>
+            <textarea name="description7"id="description7" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Title8">Title8</label>
+            <input type="text" id="Title8" name="Title8" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="description8">description8</label>
+            <textarea name="description8"id="description8" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Title9">Title9</label>
+            <input type="text" id="Title9" name="Title9" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for ="description9">description9</label>
+            <textarea name="description9"id="description9" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Title10">Title10</label>
+            <input type="text" id="Title10" name="Title10" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for ="description10">description10</label>
+            <textarea name="description10" id="description10"class="form-control"></textarea>
+        </div>
+        <input type="submit" class="btn btn-danger btn-block" value="Update">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<html>
+<head>
+    <title>FAQ's in Hotels</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion {
+            width: 100%;
+        }
+        .accordion-header:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+        .accordion-item {
+            
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            
+            padding: 10px;
+            cursor: pointer;
+        
+        }
+
+        .accordion-body {
+            display: none;
+            padding: 0px;
+            font-style: italic;
+           
+
+        }
+        h1{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<center><h1>FAQ's in Buses</h1></center>
+<div class="container">
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q1')"><b>How do I book a bus ticket online?</b></div>
+            <div class="accordion-body" id="q1">To book a bus ticket online, you can visit a bus booking website or use a mobile app. Enter your departure city, destination, date of travel, and the number of passengers. Then, choose a bus route and seat availability that suits your preferences. Proceed to payment and complete the booking process.</div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q2')"><b>What information do I need to provide for booking a bus ticket?</b></div>
+            <div class="accordion-body" id="q2">You typically need to provide details such as your departure city, destination, date of travel, number of passengers, and preferred bus timing (if applicable). You may also need to provide passenger details such as names, ages, and contact information.
+                Is it necessary to create an account to book a bus ticket online.It depends on the bus booking platform. Some platforms allow guest bookings where you don't need to create an account, while others may require you to create an account for easier booking management and access to discounts or loyalty programs.
+                </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q3')"><b>Can I cancel or modify my bus ticket after booking?</b></div>
+            <div class="accordion-body" id="q3">Yes, most bus booking platforms offer the option to cancel or modify your booking, subject to the terms and conditions of the bus operator. There may be cancellation fees or restrictions depending on how close to the departure date you make changes.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q4')"><b>How do I receive my bus ticket after booking online?</b></div>
+            <div class="accordion-body" id="q4">After completing your booking, you'll typically receive a confirmation email or SMS containing your booking details and a ticket reference number. You may need to present this ticket reference number or a printed copy of your ticket at the bus counter or directly to the bus operator before boarding.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q5')"><b>What payment options are available for booking bus tickets online?</b></div>
+            <div class="accordion-body" id="q5">Bus booking platforms usually accept various payment methods such as credit/debit cards, net banking, mobile wallets, and sometimes cash on delivery (COD), depending on the platform and your location.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q6')"><b>How early should I arrive at the bus boarding point?</b></div>
+            <div class="accordion-body" id="q6">It's advisable to arrive at least 15-30 minutes before the scheduled departure time to avoid any last-minute rush and ensure a smooth boarding process. Some bus operators may have specific boarding procedures or requirements, so it's best to check beforehand.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q7')"><b>What if I miss my bus?</b></div>
+            <div class="accordion-body" id="q7">If you miss your bus, contact the bus operator or the booking platform immediately to inquire about alternative options. Depending on availability and the operator's policies, you may be able to reschedule your journey for a later time, subject to applicable charges.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q8')"><b>Are there any discounts or offers available for bus bookings?</b></div>
+            <div class="accordion-body" id="q8">Bus booking platforms often run promotional offers, discounts, or cashback deals, especially during off-peak seasons or festivals. Keep an eye out for such promotions while booking your tickets to save on your travel expenses.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q9')"><b>Is it safe to travel by bus considering the current situation?</b></div>
+            <div class="accordion-body" id="q10">Bus operators are taking various safety measures to ensure the well-being of passengers, including regular sanitization of buses, mandatory mask-wearing, temperature checks, and enforcing social distancing norms. It's essential to follow these guidelines and take necessary precautions while traveling.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q10')"><b>How much luggage is allowed in chartered bus?</b></div>
+            <div class="accordion-body" id="q10">Maximum baggage allowed per passenger is 15 Kg, Excess baggage will be charged as per Chartered Speed Limited rules. Chartered shall not take responsibility in the event of loss or damage to the passenger luggage. Chartered reserves the right to disallow any excess baggage carried by the passengers.</div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion('q11')"><b>How much weight can carry in bus in India?</b></div>
+            <div class="accordion-body" id="q10">Each passenger can carry 50 kg of luggage free of cost.Charges will be levied on luggage beyond 50 kgs.
+                <ul>
+                    <li>Free carry-on weight of 50 kg by passenger should not exceed three packets (bags, suitcases, etc.).</li>
+                    <li>Each packet should not exceed 20 kg weight.</li>
+                </ul>
+                </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var acc = document.getElementsByClassName("accordion-header");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+acc[i].addEventListener("click", function() {
+/* Toggle between adding and removing the "active" class,
+to highlight the button that controls the panel */
+this.classList.toggle("active");
+
+/* Toggle between hiding and showing the active panel */
+var panel = this.nextElementSibling;
+if (panel.style.display === "block") {
+panel.style.display = "none";
+} else {
+panel.style.display = "block";
+    }
+  });
+}
+</script>
+</body>
+</html>
