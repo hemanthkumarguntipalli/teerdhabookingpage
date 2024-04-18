@@ -27,7 +27,7 @@ DEBUG = True
 
 CSRF_TRUSTED_ORIGINS=['https://c8e1-139-167-50-98.ngrok-free.app/']
 
-ALLOWED_HOSTS = ['c8e1-139-167-50-98.ngrok-free.app','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['*','c8e1-139-167-50-98.ngrok-free.app','localhost','127.0.0.1']
 
 
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'booking',
-        'POST':'3306',
+        'PORT':'3306',
         'PASSWORD':'',
         'HOST':'localhost',
         'USER':'root'
